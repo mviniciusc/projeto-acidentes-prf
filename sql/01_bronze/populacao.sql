@@ -1,4 +1,5 @@
+INSERT INTO bronze.acidentes
 SELECT
     *,
     '{arquivo}' AS nome_origem
-FROM read_csv_auto('{caminho}', all_varchar=True, encoding = '{enc}')
+FROM read_csv_auto('{caminho}', all_varchar=True, encoding = 'latin-1')
