@@ -14,5 +14,10 @@ with open(caminho_sql,'r', encoding='UTF-8') as f:
 con.execute(query)
 print("Star schema criado com sucesso!")
 
+#salvar as tabelas em parquet para exportar
+con.execute("COPY gold.dim_localizacao TO 'dim_localizacao.parquet' (FORMAT PARQUET);")
+con.execute("COPY gold.dim_condicoes TO 'dim_condicoes.parquet' (FORMAT PARQUET);")
+con.execute("COPY gold.fat_acidentes TO 'fat_acidentes.parquet' (FORMAT PARQUET);")
+
 #não esqueça de fechar a conexão
 con.close()
