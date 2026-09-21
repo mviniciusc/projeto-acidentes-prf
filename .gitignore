@@ -2,3 +2,4 @@
 dados/
 teste_rapido.ipynb
 parquet/
+*.pbix
